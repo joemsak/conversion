@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ConversionForm from './ConversionForm';
+
 class DistanceConverter extends Component {
   constructor(props) {
     super(props);
@@ -42,29 +44,17 @@ class DistanceConverter extends Component {
 
   render() {
     return (
-      <div className="distance-converter">
-        <h1>Convert between Miles and Kilometers</h1>
+      <ConversionForm
+        name="distance"
 
-        <input
-          type="number"
-          onChange={this.onMilesChange}
-          value={this.state.miles}
-          placeholder="mi"
-        />
+        leftInputName="mi"
+        leftInputChange={this.onMilesChange}
+        leftValue={this.state.miles}
 
-        <span className="fa fa-arrow-left"></span>
-
-        to
-
-        <span className="fa fa-arrow-right"></span>
-
-        <input
-          type="number"
-          onChange={this.onKilometersChange}
-          value={this.state.kilometers}
-          placeholder="km"
-        />
-      </div>
+        rightInputName="km"
+        rightInputChange={this.onKilometersChange}
+        rightValue={this.state.kilometers}
+      />
     );
   }
 }

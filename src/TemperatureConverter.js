@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ConversionForm from './ConversionForm';
+
 class TemperatureConverter extends Component {
   constructor(props) {
     super(props);
@@ -42,29 +44,17 @@ class TemperatureConverter extends Component {
 
   render() {
     return (
-      <div className="temp-converter">
-        <h1>Convert between Celsius and Fahrenheit</h1>
+      <ConversionForm
+        name="temp"
 
-        <input
-          type="number"
-          onChange={this.onCelsiusChange}
-          value={this.state.celsius}
-          placeholder="°C"
-        />
+        leftInputName="°C"
+        leftInputChange={this.onCelsiusChange}
+        leftValue={this.state.celsius}
 
-        <span className="fa fa-arrow-left"></span>
-
-        to
-
-        <span className="fa fa-arrow-right"></span>
-
-        <input
-          type="number"
-          onChange={this.onFahrenheitChange}
-          value={this.state.fahrenheit}
-          placeholder="°F"
-        />
-      </div>
+        rightInputName="°F"
+        rightInputChange={this.onFahrenheitChange}
+        rightValue={this.state.fahrenheit}
+      />
     );
   }
 }

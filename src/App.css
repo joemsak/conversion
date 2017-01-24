@@ -1,5 +1,6 @@
 .App {
   padding: 1rem;
+  font-size: 2.5rem;
 }
 
 .App h1 {
@@ -9,4 +10,9 @@
 .fa {
   display: inline-block;
   padding: 0 1rem;
+}
+
+input {
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
 }

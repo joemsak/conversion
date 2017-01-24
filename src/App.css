@@ -1,0 +1,12 @@
+.App {
+  padding: 1rem;
+}
+
+.App h1 {
+  font-size: 2rem;
+}
+
+.fa {
+  display: inline-block;
+  padding: 0 1rem;
+}

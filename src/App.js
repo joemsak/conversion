@@ -17,16 +17,27 @@ class App extends Component {
   onCelsiusChange(evt) {
     evt.preventDefault();
 
-    this.setState({
-      celsius: evt.target.value,
-    });
+    //°C to °F     Multiply by 9, then divide by 5, then add 32
+    const celsius = evt.target.value,
+          fahrenheit = ((celsius * 9) / 5) + 32;
+
+    this.updateValues(celsius, fahrenheit);
   }
 
   onFahrenheitChange(evt) {
     evt.preventDefault();
 
+    //°F to °C     Deduct 32, then multiply by 5, then divide by 9
+    const fahrenheit = evt.target.value,
+          celsius = ((fahrenheit - 32) * 5) / 9;
+
+    this.updateValues(celsius, fahrenheit);
+  }
+
+  updateValues(celsius, fahrenheit) {
     this.setState({
-      fahrenheit: evt.target.value,
+      celsius: Math.round(celsius * 10) / 10,
+      fahrenheit: Math.round(fahrenheit * 10) / 10,
     });
   }
 
